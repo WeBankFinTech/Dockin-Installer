@@ -1,0 +1,1 @@
+KUBELET_EXTRA_ARGS="--node-ip=[IP] --feature-gates=RotateKubeletServerCertificate=true --log-dir=/data/logs/kubernetes --logtostderr=false -v=4 --pod-manifest-path=/etc/kubernetes/manifests --hostname-override=[HOSTNAME]"

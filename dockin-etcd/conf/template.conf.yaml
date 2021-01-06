@@ -1,0 +1,22 @@
+name: etcd-current-ip-address
+data-dir: /dev/shm/dockin-etcd/data/
+snapshot-count: 5000
+listen-client-urls: https://current-ip-address:5379,https://127.0.0.1:5379
+advertise-client-urls: https://current-ip-address:5379
+listen-peer-urls: https://current-ip-address:5380
+initial-advertise-peer-urls: https://current-ip-address:5380
+initial-cluster: initial-cluster-urls
+initial-cluster-token: PGj4olxadHwa8YALdP1YnsMCoVw1Hd4
+initial-cluster-state: new
+client-transport-security:
+  cert-file: /data/app/dockin-etcd/conf/server.pem
+  key-file: /data/app/dockin-etcd/conf/server-key.pem
+  client-cert-auth: true
+  trusted-ca-file: /data/app/dockin-etcd/conf/ca.pem
+  auto-tls: true
+peer-transport-security:
+  cert-file: /data/app/dockin-etcd/conf/member.pem
+  key-file: /data/app/dockin-etcd/conf/member-key.pem
+  client-cert-auth: true
+  trusted-ca-file: /data/app/dockin-etcd/conf/ca.pem
+  auto-tls: true

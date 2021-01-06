@@ -1,0 +1,61 @@
+apiVersion:  kubeadm.k8s.io/v1beta2
+kind: ClusterConfiguration
+apiServer:
+  certSANs:
+[dockin_MASTER_IP_LIST]
+  extraArgs:
+    v: "4"
+    logtostderr: "false"
+    log-dir: /data/logs/kubernetes
+    basic-auth-file: /etc/kubernetes/pki/basic_auth_file.csv
+        
+  extraVolumes:
+  - name: host-time
+    hostPath: /usr/share/zoneinfo/Asia/Shanghai
+    mountPath: /etc/localtime
+  - name: log-dir
+    hostPath: /data/logs/kubernetes
+    mountPath: /data/logs/kubernetes
+    readOnly: false
+        
+controlPlaneEndpoint: "[dockin_MASTER_VIP]:6443"
+etcd:
+  external:
+    endpoints:
+[dockin_ETCD_LIST]
+    caFile: /etc/kubernetes/pki/etcd/ca.pem
+    certFile: /etc/kubernetes/pki/etcd/client.pem
+    keyFile: /etc/kubernetes/pki/etcd/client-key.pem
+networking:
+  podSubnet: 192.168.0.0/16
+kubernetesVersion: v1.16.6
+controllerManager:
+  extraArgs:
+    experimental-cluster-signing-duration: 87600h0m0s
+    feature-gates: RotateKubeletServerCertificate=true
+    address: 0.0.0.0
+    v: "4"
+    logtostderr: "false"
+    log-dir: /data/logs/kubernetes
+  extraVolumes:
+  - name: host-time
+    hostPath: /usr/share/zoneinfo/Asia/Shanghai
+    mountPath: /etc/localtime
+  - name: log-dir
+    hostPath: /data/logs/kubernetes
+    mountPath: /data/logs/kubernetes
+    readOnly: false  
+scheduler:
+  extraArgs:
+    address: 0.0.0.0
+    v: "4"
+    logtostderr: "false"
+    log-dir: /data/logs/kubernetes
+  extraVolumes:
+  - name: host-time
+    hostPath: /usr/share/zoneinfo/Asia/Shanghai
+    mountPath: /etc/localtime
+  - name: log-dir
+    hostPath: /data/logs/kubernetes
+    mountPath: /data/logs/kubernetes
+    readOnly: false
