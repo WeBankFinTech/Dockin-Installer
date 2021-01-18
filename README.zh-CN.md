@@ -1,8 +1,12 @@
 # Dockin Installer - Dockin Platform Installer
 
+[![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
+
 [English](README.md) | 中文
 
-Dockin平台安装器，快速部署高可用kubernetes集群、ETCD集群，生产级参数调优
+Dockin平台安装器，快速部署高可用kubernetes集群、ETCD集群，生产级参数调优。
+
+**更多Dockin组件请访问 [https://github.com/WeBankFinTech/Dockin](https://github.com/WeBankFinTech/Dockin)**
 
 ![Architecture](docs/images/dockin.png)
 

@@ -1,8 +1,12 @@
 # Dockin Installer - Dockin Platform Installer
 
+[![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
+
 English | [中文](README.zh-CN.md)
 
 The Dockin platform installer supports the rapid deployment of highly available kubernetes clusters and ETCD clusters. Possess production-level parameter tuning capabilities.
+
+**For more Dockin components, please visit [https://github.com/WeBankFinTech/Dockin](https://github.com/WeBankFinTech/Dockin)**
 
 ![Architecture](docs/images/dockin.png)
 
