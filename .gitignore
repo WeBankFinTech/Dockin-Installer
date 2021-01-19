@@ -24,3 +24,8 @@ tomcat/
 out/
 tmp/
 dockin-package.tar.gz
+etcd
+etcdctl
+cfssl
+cfssljson
+
