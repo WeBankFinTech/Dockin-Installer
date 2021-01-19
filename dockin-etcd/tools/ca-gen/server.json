@@ -1,0 +1,17 @@
+{
+  "CN": "WAE Etcd Server",
+  "hosts": [
+    ssl_server_list
+  ],
+  "key": {
+    "algo": "rsa",
+    "size": 2048
+  },
+  "names": [
+    {
+      "C": "CN",
+      "L": "GD",
+      "ST": "Shen Zhen"
+    }
+  ]
+}
