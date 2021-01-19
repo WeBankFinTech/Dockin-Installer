@@ -28,4 +28,5 @@ etcd
 etcdctl
 cfssl
 cfssljson
+dockin-docker/package
 
