@@ -103,7 +103,8 @@ master_ip_list=[#MASTER_IP_LIST]
 # local IP
 local_ip=[@HOSTIP]
 
-# etcd list, eg: https://ip1:port1,https://ip2:port2,https://ip3:port3;
+# etcd list, eg: https://ip1:port1,https://ip2:port2,https://ip3:port3; 
+# 请注意dockin-etcd的端口是5379
 etcd_list=[#ETCD_LIST]
 ```
 
