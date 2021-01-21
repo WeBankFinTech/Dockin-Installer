@@ -65,6 +65,8 @@ sudo ./install.sh
 ```
 
 ### 安装WORKER组件
+#### 注意1：WORKER组件在Master节点和Worker节点上都需要安装，对于Master节点上安装Worker组件，token和master参数可以不需要填写。
+#### 注意2：如果没有vip，可以直接填写服务器的IP，下同
 
 - 解压至目录：dockin-worker
 - 配置：conf/install.properties
