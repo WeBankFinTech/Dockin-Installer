@@ -86,13 +86,16 @@ master=[#master-vip]
 
 ```
 cd dockin-worker
-#若非master节点master_node参数需要改成false
+# 若非master节点master_node参数需要改成false
 sudo ./install.sh install v1.16.6 master_node=true
 
 ```
 
 
 ### 安装K8S Master
+
+#### 注意1：安装Master之前请确认你已经在Master节点上安装了Worker
+#### 注意2：如果没有vip，可以直接填写服务器的IP，下同
 
 - 解压至目录：dockin-master
 - 配置：conf/install.properties
