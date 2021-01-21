@@ -16,12 +16,6 @@
 ################################
 # stop etcd server
 ################################
-function delete_crontab(){
-	crontab -l | grep -v "$APP_HOME/scripts/backup.sh" | grep -v "$APP_HOME/scripts/monitor.sh" > tmp_crontab.txt || true
-	crontab tmp_crontab.txt
-	rm -f tmp_crontab.txt
-}
-
 set -e
 delete_crontab
 APP_BIN="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
