@@ -44,6 +44,11 @@ The Dockin platform installer supports the rapid deployment of highly available 
 - Install Command
 
 ```
+Modify the configuration file: vi conf/install.properties
+Fill in the parameters according to the format: server_list=(ip1 ip2 ip3)
+```
+
+```
 sudo ./install.sh 
 ```
 
