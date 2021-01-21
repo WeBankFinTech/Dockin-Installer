@@ -20,7 +20,6 @@
 #linux           :centos7
 #user            :root
 #config file     :install.properties
-#comment         :É³ÉubeadmÅÖÎ¼þ
 #==============================================================================
 set -e
 function log() {

@@ -55,6 +55,7 @@ data:
   cni-conf.json: |
     {
       "name": "cbr0",
+      "cniVersion":"0.3.1",
       "plugins": [
         {
           "type": "flannel",
@@ -79,7 +80,7 @@ data:
       }
     }
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: DaemonSet
 metadata:
   name: kube-flannel-ds
@@ -88,6 +89,9 @@ metadata:
     tier: node
     app: flannel
 spec:
+  selector:
+    matchLabels:
+      app: flannel
   template:
     metadata:
       labels:
@@ -97,7 +101,6 @@ spec:
       hostNetwork: true
       nodeSelector:
         beta.kubernetes.io/arch: amd64
-        node-role.kubernetes.io/dockin: "true"
       tolerations:
       - operator: Exists
         effect: NoSchedule

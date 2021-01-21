@@ -22,7 +22,7 @@ spec:
         k8s-app: kube-dns
     spec:
       nodeSelector:
-        node-role.kubernetes.io/dockin: "true"
+        beta.kubernetes.io/arch: amd64
       containers:
       - args:
         - -conf
