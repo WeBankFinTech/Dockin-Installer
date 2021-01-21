@@ -32,7 +32,9 @@ The Dockin platform installer supports the rapid deployment of highly available 
 
 ### download release package
 
-- download release package
+> Note: The following steps are based on the Release package. Directly clone the source code and cannot execute Install successfully.
+
+- download [release package](https://github.com/WeBankFinTech/Dockin-Installer/releases)
 
 ### Install ETCD
 
@@ -64,6 +66,10 @@ sudo ./install.sh
 ```
 
 ### Install WORKER
+
+> Note 1: The WORKER component needs to be installed on both the Master node and the Worker node. For the Worker component installed on the Master node, the token and master parameters do not need to be filled in.
+
+> Note 2: If there is no vip, you can directly fill in the server IP, the same below
 
 - Unzip to directory：dockin-worker
 - Configuration file：conf/install.properties
