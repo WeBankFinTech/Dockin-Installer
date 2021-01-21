@@ -31,8 +31,10 @@ Dockin平台安装器，快速部署高可用kubernetes集群、ETCD集群，生
 ## QuickStart
 
 ### 下载release包
+### 注意：下面的步骤是基于Release包的，直接clone源码无法成功执行Install
 
-- 在release页下载对应的release包
+- 在[release页](https://github.com/WeBankFinTech/Dockin-Installer/releases/)下载对应的release包 
+
 
 ### 安装ETCD
 
@@ -44,10 +46,12 @@ Dockin平台安装器，快速部署高可用kubernetes集群、ETCD集群，生
 - 命令
 
 ```
-cd dockin-etcd
+修改配置文件 vi conf/install.properties
+按格式填写参数：server_list=(ip1 ip2 ip3)
+```
+
+```
 sudo ./install.sh 
-
-
 ```
 
 ### 安装Docker
@@ -63,6 +67,8 @@ sudo ./install.sh
 ```
 
 ### 安装WORKER组件
+#### 注意1：WORKER组件在Master节点和Worker节点上都需要安装，对于Master节点上安装Worker组件，token和master参数可以不需要填写。
+#### 注意2：如果没有vip，可以直接填写服务器的IP，下同
 
 - 解压至目录：dockin-worker
 - 配置：conf/install.properties
@@ -82,13 +88,16 @@ master=[#master-vip]
 
 ```
 cd dockin-worker
-#若非master节点master_node参数需要改成false
+# 若非master节点master_node参数需要改成false
 sudo ./install.sh install v1.16.6 master_node=true
 
 ```
 
 
 ### 安装K8S Master
+
+#### 注意1：安装Master之前请确认你已经在Master节点上安装了Worker
+#### 注意2：如果没有vip，可以直接填写服务器的IP，下同
 
 - 解压至目录：dockin-master
 - 配置：conf/install.properties

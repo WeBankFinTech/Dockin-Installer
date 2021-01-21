@@ -58,9 +58,9 @@ function gen_urls(){
 
 #generate ssl-server-list for
 function gen_ssl_server_list(){
-    ssl_server_list="127.0.0.1"
+    ssl_server_list="\"127.0.0.1\""
     for item in ${server_list[@]}; do
-        ssl_server_list=${ssl_server_list}",$item"
+        ssl_server_list=${ssl_server_list}",\"$item\""
     done
     export ssl_server_list=${ssl_server_list}
 }
@@ -80,6 +80,7 @@ APP_NAME=$(head -n1 .name)
 validate_local_ip && echo "local ip address=[$local_ip]."
 
 gen_urls && echo "initial-cluster-urls=[${initial_cluster}]."
+gen_ssl_server_list && echo "etcd ssl server list =[$ssl_server_list]."
 
 #write conf.yaml
 cd  $SCRIPT_PATH/$APP_NAME/conf/

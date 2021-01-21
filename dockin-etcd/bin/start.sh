@@ -18,13 +18,6 @@
 ################################
 
 #
-function add_crontab(){
-	crontab -l | grep -v "$APP_HOME/scripts/backup.sh" | grep -v "$APP_HOME/scripts/monitor.sh"  > tmp_crontab.txt || true
-	echo "5 * * * * sh $APP_HOME/scripts/backup.sh  >> $APP_HOME/logs/backup.log 2>&1" >> tmp_crontab.txt
-	echo "* * * * * sh $APP_HOME/scripts/monitor.sh  >> $APP_HOME/logs/dockin-etcd.log 2>&1" >> tmp_crontab.txt
-	crontab tmp_crontab.txt
-	rm -f tmp_crontab.txt
-}
 
 #script starts here
 set -e
@@ -47,7 +40,7 @@ for no in $(seq 1 $start_timeout); do
         fi
         echo "start server timeout"; break;
     else
-        echo -e "etcd server start success, pid=$pid"; add_crontab; break;
+        echo -e "etcd server start success, pid=$pid"; break;
     fi
 done
 

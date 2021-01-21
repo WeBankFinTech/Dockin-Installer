@@ -2,7 +2,7 @@
 
 [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
-English | [中文](README.zh-CN.md)
+English | [中文（推荐）](README.zh-CN.md)
 
 The Dockin platform installer supports the rapid deployment of highly available kubernetes clusters and ETCD clusters. Possess production-level parameter tuning capabilities.
 
@@ -32,7 +32,9 @@ The Dockin platform installer supports the rapid deployment of highly available 
 
 ### download release package
 
-- download release package
+> Note: The following steps are based on the Release package. Directly clone the source code and cannot execute Install successfully.
+
+- download [release package](https://github.com/WeBankFinTech/Dockin-Installer/releases)
 
 ### Install ETCD
 
@@ -44,7 +46,11 @@ The Dockin platform installer supports the rapid deployment of highly available 
 - Install Command
 
 ```
-cd dockin-etcd
+Modify the configuration file: vi conf/install.properties
+Fill in the parameters according to the format: server_list=(ip1 ip2 ip3)
+```
+
+```
 sudo ./install.sh 
 ```
 
@@ -60,6 +66,10 @@ sudo ./install.sh
 ```
 
 ### Install WORKER
+
+> Note 1: The WORKER component needs to be installed on both the Master node and the Worker node. For the Worker component installed on the Master node, the token and master parameters do not need to be filled in.
+
+> Note 2: If there is no vip, you can directly fill in the server IP, the same below
 
 - Unzip to directory：dockin-worker
 - Configuration file：conf/install.properties
