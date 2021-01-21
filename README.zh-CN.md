@@ -31,8 +31,10 @@ Dockin平台安装器，快速部署高可用kubernetes集群、ETCD集群，生
 ## QuickStart
 
 ### 下载release包
+### 注意：下面的步骤是基于Release包的，直接clone源码无法成功执行Install
 
-- 在release页下载对应的release包 https://github.com/WeBankFinTech/Dockin-Installer/releases/
+- 在[release页](https://github.com/WeBankFinTech/Dockin-Installer/releases/)下载对应的release包 
+
 
 ### 安装ETCD
 
