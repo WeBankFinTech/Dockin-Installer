@@ -44,7 +44,6 @@ The Dockin platform installer supports the rapid deployment of highly available 
 - Install Command
 
 ```
-cd dockin-etcd
 sudo ./install.sh 
 ```
 
