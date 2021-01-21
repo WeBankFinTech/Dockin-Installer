@@ -44,7 +44,6 @@ Dockin平台安装器，快速部署高可用kubernetes集群、ETCD集群，生
 - 命令
 
 ```
-cd dockin-etcd
 sudo ./install.sh 
 
 
