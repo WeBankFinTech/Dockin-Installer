@@ -32,7 +32,7 @@ Dockin平台安装器，快速部署高可用kubernetes集群、ETCD集群，生
 
 ### 下载release包
 
-- 在release页下载对应的release包
+- 在release页下载对应的release包 https://github.com/WeBankFinTech/Dockin-Installer/releases/
 
 ### 安装ETCD
 
