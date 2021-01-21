@@ -44,9 +44,12 @@ Dockin平台安装器，快速部署高可用kubernetes集群、ETCD集群，生
 - 命令
 
 ```
+修改配置文件 vi conf/install.properties
+按格式填写参数：server_list=(ip1 ip2 ip3)
+```
+
+```
 sudo ./install.sh 
-
-
 ```
 
 ### 安装Docker
