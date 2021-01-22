@@ -118,11 +118,12 @@ local_ip=
 etcd_list=
 ```
 
-- ETCD证书地址：/etc/kubernetes/pki/etcd/
+- 拷贝ETCD证书
 
 ```
-# 需要包含以下文件，从ETCD节点/data/app/dockin-etcd/conf路径下获取
-ca.pem client.pem client-key.pem
+1. 创建目录：/etc/kubernetes/pki/etcd/
+2. 拷贝文件 ca.pem client.pem client-key.pem
+# 以上文件从ETCD节点/data/app/dockin-etcd/conf路径下获取
 ```
 
 - 命令
