@@ -19,6 +19,7 @@ Dockin平台安装器，快速部署高可用kubernetes集群、ETCD集群，生
     * 关闭kernel memory accounting
     * 全链路支持HTTPS
     * 10年证书签名
+    * 支持CNI网络
 
 ## Installation
 
@@ -75,13 +76,13 @@ sudo ./install.sh
 
 ```
 #本机IP
-ip=[@HOSTIP]
+ip=
 
 # 加入集群的token，通过master的脚本产生
-token=[#join-token]
+token=
 
 # Master ApiServer IP/VIP
-master=[#master-vip]
+master=
 ```
 
 - 命令
@@ -104,17 +105,17 @@ sudo ./install.sh install v1.16.6 master_node=true
 
 ```
 # master HA VIP
-master_vip=[#MASTER_VIP]
+master_vip=
 
 # masterIP and VIP
-master_ip_list=[#MASTER_IP_LIST]
+master_ip_list=
 
 # local IP
-local_ip=[@HOSTIP]
+local_ip=
 
 # etcd list, eg: https://ip1:port1,https://ip2:port2,https://ip3:port3; 
 # 请注意dockin-etcd的端口是5379
-etcd_list=[#ETCD_LIST]
+etcd_list=
 ```
 
 - ETCD证书地址：/etc/kubernetes/pki/etcd/
