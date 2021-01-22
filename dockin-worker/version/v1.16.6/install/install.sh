@@ -25,7 +25,7 @@ set -ex
 current_dir=$(cd "$(dirname "$0")";pwd)
 common_dir=${current_dir}/../../../common
 install_config=${current_dir}/../../../conf/install.properties
-
+cni_dir=${current_dir}/../../../cni
 
 function log() {
     level=$1
@@ -72,6 +72,14 @@ mv *-package dockin-package;
 #
 log INFO "loading images...";
 for i in $(ls ./dockin-package/package/*.tar); do log INFO "loading $i"; docker load --input $i; done
+
+# install cni plugin bin
+mkdir -p /opt/cni/bin
+
+cd $cni_dir/common/cni-plugins
+tar zxvf cni-plugins-amd64-v0.6.0.tgz -C /opt/cni/bin
+chmod +x /opt/cni/bin/*
+
 
 # install kubectl kubeadm kubelet
 kube_version="v1.16.6"

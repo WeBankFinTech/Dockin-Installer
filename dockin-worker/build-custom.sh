@@ -90,7 +90,7 @@ function package_install(){
 	update_file_code
 	tar_name="${SCRIPT_PATH}/dist/${name}_${version}_$1.tar.gz"
 	
-	tar -zcvf ${tar_name} common conf install.sh uninstall.sh  version/$k8s_version
+	tar -zcvf ${tar_name} cni common conf install.sh uninstall.sh  version/$k8s_version
 }
 
 function package_upgrade(){

@@ -31,6 +31,6 @@ for module in ${module_list[@]}
 do
   echo "building $module "
   cd $SCRIPT_PATH/$module
-  ./build.sh package $time
+  ./build.sh package "dist"
   cp dist/* $SCRIPT_PATH/dist/
 done
