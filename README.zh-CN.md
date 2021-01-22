@@ -133,6 +133,13 @@ cd dockin-master
 sudo ./install.sh install v1.16.6 first_node=true
 ```
 
-### 使用外部负载均衡器
+### 增加Worker节点
+
+```
+1. 执行脚本 common/node-manager/create-node-join-token.sh，获取token
+2. 使用上面安装Worker的步骤，注意修改参数master_node=false
+```
+
+### 使用外部负载均衡器（Master高可用）
 
 使用云厂商提供的LB、自建haproxy、自建nginx都可以接入apiserver，作为高可用负载均衡器
