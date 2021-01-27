@@ -29,4 +29,4 @@ etcdctl
 cfssl
 cfssljson
 dockin-docker/resources/package
-
+cni-plugins-amd64-v0.6.0.tgz
