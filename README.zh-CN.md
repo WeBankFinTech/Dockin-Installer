@@ -19,6 +19,7 @@ Dockin平台安装器，快速部署高可用kubernetes集群、ETCD集群，生
     * 关闭kernel memory accounting
     * 全链路支持HTTPS
     * 10年证书签名
+    * 支持CNI网络
 
 ## Installation
 
@@ -75,13 +76,13 @@ sudo ./install.sh
 
 ```
 #本机IP
-ip=[@HOSTIP]
+ip=
 
 # 加入集群的token，通过master的脚本产生
-token=[#join-token]
+token=
 
 # Master ApiServer IP/VIP
-master=[#master-vip]
+master=
 ```
 
 - 命令
@@ -104,24 +105,25 @@ sudo ./install.sh install v1.16.6 master_node=true
 
 ```
 # master HA VIP
-master_vip=[#MASTER_VIP]
+master_vip=
 
 # masterIP and VIP
-master_ip_list=[#MASTER_IP_LIST]
+master_ip_list=
 
 # local IP
-local_ip=[@HOSTIP]
+local_ip=
 
 # etcd list, eg: https://ip1:port1,https://ip2:port2,https://ip3:port3; 
 # 请注意dockin-etcd的端口是5379
-etcd_list=[#ETCD_LIST]
+etcd_list=
 ```
 
-- ETCD证书地址：/etc/kubernetes/pki/etcd/
+- 拷贝ETCD证书
 
 ```
-# 需要包含以下文件，从ETCD节点/data/app/dockin-etcd/conf路径下获取
-ca.pem client.pem client-key.pem
+1. 创建目录：/etc/kubernetes/pki/etcd/
+2. 拷贝文件 ca.pem client.pem client-key.pem
+# 以上文件从ETCD节点/data/app/dockin-etcd/conf路径下获取
 ```
 
 - 命令
@@ -132,6 +134,13 @@ cd dockin-master
 sudo ./install.sh install v1.16.6 first_node=true
 ```
 
-### 使用外部负载均衡器
+### 增加Worker节点
+
+```
+1. 执行脚本 common/node-manager/create-node-join-token.sh，获取token
+2. 使用上面安装Worker的步骤，注意修改参数master_node=false
+```
+
+### 使用外部负载均衡器（Master高可用）
 
 使用云厂商提供的LB、自建haproxy、自建nginx都可以接入apiserver，作为高可用负载均衡器
