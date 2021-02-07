@@ -17,7 +17,7 @@
 # stop etcd server
 ################################
 set -e
-delete_crontab
+
 APP_BIN="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 APP_HOME="$(dirname $APP_BIN)"; [ -d "$APP_HOME" ] || { echo "ERROR dockin-etcd failed to detect APP_HOME."; exit 1;}
 APP_NAME=$(basename "$APP_HOME")
