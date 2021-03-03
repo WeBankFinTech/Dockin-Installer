@@ -33,6 +33,13 @@ Dockin平台安装器，快速部署高可用kubernetes集群、ETCD集群，生
 
 ### 下载release包
 ### 注意：下面的步骤是基于Release包的，直接clone源码无法成功执行Install
+### 为方便国内下载，release包已上传一份致腾讯云
+```
+https://osp-1257653870.cos.ap-guangzhou.myqcloud.com/Dockin/dockin-etcd_0.1.1_dist.tar.gz
+https://osp-1257653870.cos.ap-guangzhou.myqcloud.com/Dockin/dockin-docker_0.1.1_dist.tar.gz
+https://osp-1257653870.cos.ap-guangzhou.myqcloud.com/Dockin/dockin-worker_0.1.1_dist.tar.gz
+https://osp-1257653870.cos.ap-guangzhou.myqcloud.com/Dockin/dockin-master_0.1.1_dist.tar.gz
+```
 
 - 在[release页](https://github.com/WeBankFinTech/Dockin-Installer/releases/)下载对应的release包 
 
