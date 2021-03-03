@@ -73,16 +73,7 @@ mv *-package dockin-package;
 log INFO "loading images...";
 for i in $(ls ./dockin-package/package/*.tar); do log INFO "loading $i"; docker load --input $i; done
 
-# install cni plugin bin
-mkdir -p /opt/cni/bin
-
-cd $cni_dir/common/cni-plugins
-tar zxvf cni-plugins-amd64-v0.6.0.tgz -C /opt/cni/bin
-chmod +x /opt/cni/bin/*
-
-
 # install kubectl kubeadm kubelet
-kube_version="v1.16.6"
 binary_dir="dockin-package/binary"
 
 cp -f ${binary_dir}/kubeadm /usr/bin/
@@ -113,6 +104,13 @@ $common_dir/kubelet_args_set/generate_kubelet_extra_args.sh ${install_config}
 
 # ，
 rm -rf /etc/sysconfig/kubelet
+
+# install cni plugin bin
+mkdir -p /opt/cni/bin
+
+cd $cni_dir/common/cni-plugins
+tar zxvf cni-plugins-amd64-v0.6.0.tgz -C /opt/cni/bin
+chmod +x /opt/cni/bin/*
 
 systemctl daemon-reload;
 systemctl restart kubelet && systemctl enable kubelet;
