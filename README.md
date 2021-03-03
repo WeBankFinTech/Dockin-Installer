@@ -48,6 +48,7 @@ The Dockin platform installer supports the rapid deployment of highly available 
 ```
 Modify the configuration file: vi conf/install.properties
 Fill in the parameters according to the format: server_list=(ip1 ip2 ip3)
+Please copy /data/app/dockin-etcd/conf/*.pem to other etcd nodes after the installation of etcd, then restart etcd
 ```
 
 ```
