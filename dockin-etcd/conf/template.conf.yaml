@@ -6,7 +6,7 @@ advertise-client-urls: https://current-ip-address:5379
 listen-peer-urls: https://current-ip-address:5380
 initial-advertise-peer-urls: https://current-ip-address:5380
 initial-cluster: initial-cluster-urls
-initial-cluster-token: PGj4olxadHwa8YALdP1YnsMCoVw1Hd4
+initial-cluster-token: 
 initial-cluster-state: new
 client-transport-security:
   cert-file: /data/app/dockin-etcd/conf/server.pem
